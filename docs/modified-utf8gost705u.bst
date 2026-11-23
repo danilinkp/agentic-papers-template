@@ -1094,7 +1094,6 @@ FUNCTION {article}
   new.block
   note output
   new.sentence
-  format.url output
   format.annote output
   fin.entry
 }
@@ -1233,7 +1232,6 @@ FUNCTION {inproceedings}
   new.block
   note output
   new.sentence
-  format.url output
   format.annote output
   fin.entry
 }
@@ -1423,8 +1421,9 @@ FUNCTION {unpublished}
   editor.organization.after
   new.block
   note "note" output.check
+  new.block
+  format.date output
   new.sentence
-  format.url output
   format.annote output
   fin.entry
 }
