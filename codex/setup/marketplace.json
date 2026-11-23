@@ -1,0 +1,12 @@
+{
+  "name": "papers-template",
+  "interface": {"displayName": "Шаблон научных работ"},
+  "plugins": [
+    {
+      "name": "paper-workbench",
+      "source": {"source": "local", "path": "./plugins/paper-workbench"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity"
+    }
+  ]
+}

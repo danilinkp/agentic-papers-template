@@ -1,0 +1,16 @@
+% Связь общей преамбулы из курсовой по БД с профилями шаблона.
+\newcommand{\papersectionfile}[1]{\clearpage\input{#1}}
+
+% После сброса счётчиков в приложении ссылки должны оставаться уникальными.
+\makeatletter
+\patchcmd{\appsection}{\stepcounter{appsection}}{\refstepcounter{appsection}}{}{%
+  \PackageError{papers-template}{Could not attach appendix labels}{Check the definition of \string\appsection}%
+}
+\appto{\appsection}{%
+  \def\theHsection{appendix.\arabic{appsection}.\arabic{section}}%
+  \def\theHfigure{appendix.\arabic{appsection}.\arabic{figure}}%
+  \def\theHtable{appendix.\arabic{appsection}.\arabic{table}}%
+  \def\theHequation{appendix.\arabic{appsection}.\arabic{equation}}%
+  \def\theHlstlisting{appendix.\arabic{appsection}.\arabic{lstlisting}}%
+}
+\makeatother

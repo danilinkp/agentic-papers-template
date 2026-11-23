@@ -1,0 +1,36 @@
+\input{preamble}
+\input{template}
+\input{metadata}
+
+\begin{document}
+
+\ifx\paperFrontmatterPDF\empty
+  \input{titlepage}
+\else
+  \includepdf[pages={\paperFrontmatterPages}]{\paperFrontmatterPDF}
+\fi
+
+\ifx\paperFirstPage\empty\else
+  \setcounter{page}{\paperFirstPage}
+\fi
+
+\papersectionfile{sections/common/abstract}
+
+\renewcommand{\contentsname}{СОДЕРЖАНИЕ}
+\clearpage
+\tableofcontents
+
+\ifpaperAbbreviations
+  \papersectionfile{sections/common/abbreviations}
+\fi
+\papersectionfile{sections/common/introduction}
+\paperPlan
+\papersectionfile{sections/common/conclusion}
+
+\papersectionfile{sections/common/bibliography}
+
+\ifpaperAppendix
+  \papersectionfile{sections/common/appendix}
+\fi
+
+\end{document}

@@ -1,0 +1,67 @@
+\begin{titlepage}
+  \setstretch{1}
+  \setlength{\parindent}{0pt}
+
+  \noindent
+  \begin{minipage}[c][32mm][c]{24mm}
+    \centering
+    \ifx\paperEmblem\empty\else
+      \raisebox{-1.5mm}{\includegraphics[width=21mm]{\paperEmblem}}
+    \fi
+  \end{minipage}%
+  \begin{minipage}[c][32mm][c]{\dimexpr\textwidth-24mm\relax}
+    \centering\bfseries\fontsize{11bp}{12.65bp}\selectfont
+    \paperMinistry\\
+    Федеральное государственное автономное образовательное учреждение\\
+    высшего образования\\
+    \paperUniversity\par
+  \end{minipage}\par
+  \vspace{1mm}
+  \rule{\textwidth}{1.25mm}\par
+  \vspace{5mm}
+
+  {\fontsize{11bp}{12.65bp}\selectfont
+    \begin{tabularx}{\textwidth}{@{\hspace{2mm}}p{22.5mm}X@{}}
+      \adjustbox{max width=\linewidth}{ФАКУЛЬТЕТ} & \paperFaculty \\ \cline{2-2}
+      КАФЕДРА & {\fontsize{9pt}{11bp}\selectfont\adjustbox{max width=\linewidth}{\paperDepartment}} \\ \cline{2-2}
+    \end{tabularx}\par
+  }
+
+  \vspace{25mm}
+  \begin{minipage}[t][76mm][t]{\textwidth}
+    \centering
+    {\bfseries\fontsize{20.74pt}{25bp}\selectfont\paperType\par}
+    \vspace{4mm}
+    {\bfseries\itshape\fontsize{20.74pt}{22bp}\selectfont НА ТЕМУ:\par}
+    \vspace{8mm}
+    {\bfseries\itshape\fontsize{20.74pt}{22bp}\selectfont\paperTitle\par}
+  \end{minipage}\par
+
+  \begingroup
+  \fontsize{10.95pt}{12.65bp}\selectfont
+  \newcommand{\paperSignatureField}[3]{%
+    \parbox[t]{#1}{\centering\strut #2\par
+      \hrule height 0.4pt\relax
+      {\fontsize{9bp}{11bp}\selectfont\strut #3\par}}%
+  }
+  \begin{tabular}{@{\hspace{2mm}}p{45.5mm}@{\hspace{5mm}}p{30mm}%
+                  @{\hspace{5mm}}p{37.5mm}@{\hspace{5mm}}p{35mm}@{}}
+    Студент &
+      \paperSignatureField{30mm}{\paperGroup}{(группа)} &
+      \paperSignatureField{37.5mm}{}{(подпись, дата)} &
+      \paperSignatureField{35mm}{\paperAuthor}{(И.О. Фамилия)}
+      \\[3mm]
+    \paperSupervisorLabel & &
+      \paperSignatureField{37.5mm}{}{(подпись, дата)} &
+      \paperSignatureField{35mm}{\paperSupervisor}{(И.О. Фамилия)}
+      \\[9mm]
+    Консультант & &
+      \paperSignatureField{37.5mm}{}{(подпись, дата)} &
+      \paperSignatureField{35mm}{\paperConsultant}{(И.О. Фамилия)}
+  \end{tabular}\par
+  \endgroup
+
+  \vspace{29mm}
+  {\centering\itshape\paperYear~г.\par}
+\end{titlepage}
+\setcounter{page}{2}

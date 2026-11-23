@@ -1,0 +1,31 @@
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk_pdflatex",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-halt-on-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk (pdflatex)",
+            "tools": ["latexmk_pdflatex"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "latexmk (pdflatex)",
+    "latex-workshop.latex.search.rootFiles.include": [
+        "docs/main.tex",
+        "docs/coursework.tex"
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/../build/vscode/%DOCFILE%",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.view.pdf.viewer": "tab"
+}

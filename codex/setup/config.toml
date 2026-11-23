@@ -1,0 +1,29 @@
+[plugins."paper-workbench@papers-template"]
+enabled = true
+
+[mcp_servers.academic_literature]
+command = "python3"
+args = ["codex/literature_mcp.py"]
+cwd = __PROJECT_ROOT__
+tool_timeout_sec = 45
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+startup_timeout_sec = 20
+tool_timeout_sec = 45
+# Для повышенных лимитов можно добавить ключ через переменную окружения.
+# env_http_headers = { CONTEXT7_API_KEY = "CONTEXT7_API_KEY" }
+
+[mcp_servers.playwright]
+enabled = false
+command = "npx"
+args = ["--yes", "@playwright/mcp@0.0.86", "--browser", "chrome", "--headless", "--isolated"]
+startup_timeout_sec = 60
+
+[mcp_servers.google_scholar]
+enabled = false
+command = "uv"
+args = ["run", "--project", ".local/google-scholar-mcp", "--with", "mcp[cli]==1.26.0", "--with", "bibtexparser==1.4.4", "python", "codex/google_scholar_mcp.py"]
+cwd = __PROJECT_ROOT__
+startup_timeout_sec = 60
+tool_timeout_sec = 45
